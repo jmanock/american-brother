@@ -1,7 +1,50 @@
-import React from 'react';
+import React,{Component} from 'react';
 
-const SignUp = () =>(
-  <h1>Sign Up</h1>
-);
+class SignUp extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      name: null,
+      email:null
+    }
+  }
+  handleInputChange = (event) =>{
+    this.setState({
+      [event.target.name]:event.target.value,
+    });
+  }
+  handleSubmit = (event) =>{
+    event.preventDefault();
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz1ddL3nb5VS0v_TMXTmGTELPdWHkG-yVWTG5YdcKhBByCk9-0/exec';
+    const form = document.forms['something'];
 
+    fetch(scriptURL, {method:'POST', body:new FormData(form)})
+      .then(response => console.log('Succss!!!', response))
+      .catch(error => console.log('Error!!!', error.message))
+  }
+  render(){
+    return(
+      <section className='my-5' id='Sign'>
+        <div className='container'>
+          <div className='row'>
+            <p className='text-center col-md-10 mx-auto' style={{fontSize:'1em',fontFamily:'Helvetica Neue'}}>
+              Stay up to date with the latest Pictures, News, &amp; Events!!!
+            </p>
+            <form onSubmit={this.handleSubmit} name='something' className='col-md-10 mx-auto'>
+              <div className='form-group'>
+                <input className='form-control form-control-lg' name='name' type='text' placeholder='Name' required onChange={this.handleInputChange} />
+              </div>
+              <div className='form-group'>
+                <input className='form-control form-control-lg' name='email' type='email' placeholder='Email' required onChange={this.handleInputChange} />
+              </div>
+              <div className='form-group'>
+                <button type='submit' className='form-control form-control-lg submit'>Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    )
+  }
+}
 export default SignUp;

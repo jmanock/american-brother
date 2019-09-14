@@ -1,7 +1,9 @@
 import React from 'react';
 
 const Footer = () =>(
-  <h1>Footer</h1>
+  <div style={{backgroundColor:'#112546'}}>
+    <h3 className='text-center' style={{color:'#fff'}}>&copy;2019 <span style={{color:'#b30000'}}>American Brother Foundation</span></h3>
+  </div>
 );
 
 export default Footer;
