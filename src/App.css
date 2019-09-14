@@ -13,9 +13,14 @@ body{
 }
 .nav-link{
   color:#fff !important;
+  cursor:pointer;
+}
+.nav-link:hover{
+  text-decoration:underline !important;
 }
 .navbar-brand{
   color:#b30000 !important;
+  cursor:pointer;
 }
 video{
   width:100%;
@@ -66,4 +71,11 @@ header .overlay{
 .submit:hover{
   background-color:#112546;
   color:#fafafa;
+}
+button{
+  cursor:pointer;
+}
+.footer{
+  height:100px;
+  width:100%;
 }

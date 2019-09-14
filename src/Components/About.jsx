@@ -2,7 +2,7 @@ import React from 'react';
 import Flag from '../Images/flag.mp4';
 
 const About = () =>(
-  <div style={{backgroundColor:'#fafafa'}}>
+  <div style={{backgroundColor:'#fafafa'}} id='Top'>
     <header>
       <div className='overlay'></div>
         <video autoPlay loop id='myVideo'>
